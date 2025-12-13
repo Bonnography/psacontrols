@@ -1,0 +1,38 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Footer"/>
+<f:section name="Main">
+    <footer>
+        <section class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer-left">
+                            <h2>Newsletter</h2>
+                            <p><f:translate key="LLL:EXT:cbw_sitepackage/Resources/Private/Language/locallang.xlf:footer.newsletterText"/></p>
+                            <!-- Begin Brevo Form -->
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-right">
+                            <h2>Social Media</h2>
+                            <p><f:translate key="LLL:EXT:cbw_sitepackage/Resources/Private/Language/locallang.xlf:footer.socialMediaText"/></p>
+                            <f:cObject typoscriptObjectPath="lib.menu-social-media" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center copyright-menu-section">
+                    <div class="col-lg-5 order-2 order-lg-1 text-center text-lg-start">
+                        <div id="copyright">
+                            <f:format.raw>{copyright}</f:format.raw>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 order-1 order-lg-2 text-lg-end">
+                        <f:cObject typoscriptObjectPath="lib.menu-footer" />
+                        <f:format.raw>{menu-language}</f:format.raw>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+</f:section>
+</html>
