@@ -9,25 +9,43 @@ document.addEventListener("DOMContentLoaded", function(event) {
         f.setAttribute("content", "width=360, maximum-scale=1.0, user-scalable=0");
     }
     if (g < 1280 && f) {
-        f.setAttribute('content', 'width=device-width,initial-scale=1.0,maximum-scale=10.0,user-scalable=1');
+        f.setAttribute('content', 'width=device-width,initial-scale=1.0,user-scalable=1');
     }
 
     // mobile menu starts
-    let $navIcon = document.getElementById('nav-icon');
+    let $navIcon = document.getElementById('hamburger-menu');
 
     if ($navIcon.offsetParent !== 0) {
+        let Closed = false;
         let navMenu = document.getElementById('menu-main');
         let menu = document.querySelector('.menu-main');
+        let languageMenu = document.querySelector('.language-menu');
 
         $navIcon.addEventListener("click", function () {
-            $navIcon.classList.toggle('open');
-            menu.classList.toggle('d-none');
+            if (Closed) {
+                $navIcon.classList.remove('open');
+                $navIcon.classList.add('closed');
+                Closed = false;
+            } else {
+                $navIcon.classList.remove('closed');
+                $navIcon.classList.add('open');
+                Closed = true;
+            }
+            //menu.classList.toggle('d-none');
 
             if (!navMenu.classList.contains('open')) {
                 navMenu.classList.add('open');
                 document.body.style.overflow = 'hidden';
             }  else {
                 navMenu.classList.remove('open');
+                document.body.style.overflow = null;
+            }
+
+            if (!languageMenu.classList.contains('open')) {
+                languageMenu.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }  else {
+                languageMenu.classList.remove('open');
                 document.body.style.overflow = null;
             }
         });
@@ -328,23 +346,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 
-function myCallBack() {
-    let recaptcha1;
-    let recaptcha2;
-    let recaptchaBox1 = document.getElementById('recaptcha-1');
-    let recaptchaBox2 = document.getElementById('recaptcha-2');
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Wählt den Haupt-Container aus, der die Klasse 'open' erhalten wird
+    const selector = document.querySelector('.language-selector');
 
-    if (typeof (recaptchaBox1) != 'undefined' && recaptchaBox1 != null)
-    {
-        recaptcha1 = grecaptcha.render(document.getElementById('recaptcha-1'), {
-            'sitekey' : '6Lf9U-smAAAAAJiSuBFiQLxsyo6KKW0FnJFsP-XG'
+    // 2. Wählt den neuen Dropdown-Kopf (den Button) aus
+    const toggleButton = selector ? selector.querySelector('.language-toggle button') : null;
+
+    if (selector && toggleButton) {
+        // A. Klick-Event für den Button, der das Menü öffnet/schließt
+        toggleButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Verhindert die Standard-Button-Aktion (falls vorhanden)
+            // Fügt die Klasse 'open' zum Haupt-Container hinzu oder entfernt sie
+            selector.classList.toggle('open');
+        });
+
+        // B. Schließen, wenn außerhalb des gesamten Sprachselektors geklickt wird
+        document.addEventListener('click', (e) => {
+            // Prüft, ob der Klick außerhalb des .language-selector-Containers erfolgte
+            // UND ob das Menü aktuell geöffnet ist
+            if (!selector.contains(e.target) && selector.classList.contains('open')) {
+                selector.classList.remove('open');
+            }
         });
     }
-
-    if (typeof (recaptchaBox2) != 'undefined' && recaptchaBox2 != null)
-    {
-        recaptcha2 = grecaptcha.render(document.getElementById('recaptcha-2'), {
-            'sitekey' : '6LfjiWIpAAAAAHDVISXWEodsfLxN6WJmUhm9KFQF'
-        });
-    }
-}
+});

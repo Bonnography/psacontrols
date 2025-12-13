@@ -1,0 +1,154 @@
+.language-menu {
+  display: none;
+
+  &.open {
+    display: flex;
+
+
+
+  }
+  .language-selector {
+    position: relative;
+    display: inline-block;
+    min-width: 180px; /* Stellt sicher, dass alle Elemente die gleiche Mindestbreite haben */
+  }
+  /* 🚩 3. FLAGGEN und Pfeil (unverändert) */
+  .flag-icon {
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+    margin-right: 8px;
+    border: 1px solid #ddd;
+    flex-shrink: 0;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .language-menu {
+    display: flex;
+    align-items: center;
+  }
+  /* -------------------- 1. CONTAINER & GRUNDLAGEN -------------------- */
+  .language-selector {
+    position: relative;
+    display: inline-block;
+    min-width: 180px; /* Stellt sicher, dass alle Elemente die gleiche Mindestbreite haben */
+  }
+
+  /* -------------------- 2. DROPDOWN-KOPF (Derzeit aktive Sprache) -------------------- */
+  .language-toggle button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px 12px;
+    background-color: #fff;
+
+    /* ❌ Rahmen und Schatten hier entfernen, wenn Menü geöffnet ist */
+    border: 1px solid transparent;
+    transition: border .2s;
+
+    margin-bottom: 0; /* Wichtig: Keine Lücke zwischen Kopf und Menü */
+
+    color: #555;
+    font-weight: normal;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .language-selector.open {
+    .language-toggle button {
+      border: 1px solid #ddd;
+      transition: border .2s;
+    }
+  }
+
+  /* 🟢 KORREKTUR: Styling des Kopfes, wenn das Menü geöffnet ist */
+  .language-selector.open .language-toggle button {
+    /* Entferne den Bottom-Border und den Bottom-Shadow, um die Linie zu verbinden */
+    border-bottom-color: transparent;
+    margin-bottom: 0;
+  }
+
+
+  .dropdown-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 10px;
+    vertical-align: middle;
+    border-bottom: 0;
+    border-top: 4px solid #555;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    transition: transform 0.3s;
+  }
+  .language-selector.open .dropdown-arrow {
+    border-bottom: 4px solid #555;
+    border-top: 0;
+  }
+
+  /* -------------------- 4. DROPDOWN MENÜ (Die Liste der Optionen) -------------------- */
+  .language-dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    /* Standardmäßig versteckt */
+    display: none;
+
+    position: absolute;
+    top: 100%; /* Direkt unter dem Button */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    /* 🟢 KORREKTUR: Rahmen und Schatten des Menüs anpassen */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none; /* Wichtig: Der obere Rahmen wird durch den Button-Rahmen ersetzt */
+  }
+
+  .language-selector.open .language-dropdown-menu {
+    display: block;
+  }
+
+  /* 5. STYLE DER EINZELNEN SPRACHLINKS IM DROPDOWN */
+  .language-dropdown-menu .language-item {
+    margin-bottom: 0; /* Keine Lücke zwischen den Items */
+    padding: 0;
+    width: 100%;
+  }
+
+  .language-dropdown-menu .language-item:not(:last-child) a {
+    /* ❌ Rahmen zwischen den Links entfernen (im Bild sind keine Trennlinien) */
+    border-bottom: none;
+  }
+
+  .language-dropdown-menu .language-item a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 8px 12px;
+    background-color: #fff;
+
+    /* ❌ Rahmen und Schatten hier entfernen */
+    border: none;
+    box-shadow: none;
+
+    color: #555;
+    font-size: 16px;
+    transition: background-color 0.2s, color 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .language-dropdown-menu .language-item a:hover {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+}
