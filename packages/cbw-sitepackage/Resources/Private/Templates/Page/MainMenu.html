@@ -2,7 +2,7 @@
 <f:layout name="Default" />
 <f:section name="Main">
     <f:if condition="{mainnavigation}">
-        <nav id="menu-main">
+        <nav id="menu-main" role="navigation">
             <ul class="menu-main__list">
                 <f:for each="{mainnavigation}" as="listitem">
                     <li class="menu-main_item lvl1{f:if(condition: '{listitem.active} || {listitem.data.shortcut} == {data.uid}', then: ' active')}{f:if(condition: listitem.children, then: ' w-submenu')}">

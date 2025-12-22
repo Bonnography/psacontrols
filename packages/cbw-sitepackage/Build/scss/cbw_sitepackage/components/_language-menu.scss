@@ -17,7 +17,7 @@
     width: 24px;
     height: 16px;
     object-fit: cover;
-    margin-right: 8px;
+    margin-right: 20px;
     border: 1px solid #ddd;
     flex-shrink: 0;
   }
@@ -39,8 +39,8 @@
   /* -------------------- 2. DROPDOWN-KOPF (Derzeit aktive Sprache) -------------------- */
   .language-toggle button {
     display: flex;
+    position: relative;
     align-items: center;
-    justify-content: space-between;
 
     padding: 8px 12px;
     background-color: #fff;
@@ -77,8 +77,9 @@
     display: inline-block;
     width: 0;
     height: 0;
-    margin-left: 10px;
     vertical-align: middle;
+    position: absolute;
+    right: 10px;
     border-bottom: 0;
     border-top: 4px solid #555;
     border-right: 4px solid transparent;

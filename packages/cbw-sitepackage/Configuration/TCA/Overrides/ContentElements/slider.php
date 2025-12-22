@@ -8,38 +8,12 @@ call_user_func(
         $table = &$GLOBALS['TCA']['tt_content'];
 
         // cancel here, if this type is already defined
-        if (isset($table['types']['inlineElements'])) {
+        if (isset($table['types']['slider'])) {
             return;
         }
-        $inlineElements = [
-            'inline_layout' => [
-                'exclude' => 1,
-                'label' => 'Layout',
-                'onChange' => 'reload',
-                'config' => [
-                    'type' => 'select',
-                    'renderType' => 'selectSingle',
-                    'default' => 0,
-                    'items' => [
-                        ['LLL:EXT:cbw_sitepackage/Resources/Private/Language/backend.xlf:tt_content.inlineElements.inline_layout.0', 0],
-                        ['LLL:EXT:cbw_sitepackage/Resources/Private/Language/backend.xlf:tt_content.inlineElements.inline_layout.1', 1],
-                        ['LLL:EXT:cbw_sitepackage/Resources/Private/Language/backend.xlf:tt_content.inlineElements.inline_layout.2', 2],
-                    ],
-                ],
-            ],
-        ];
 
-        $GLOBALS['TCA']['tt_content']['palettes']['headline_palette']['showitem'] = '
-            header;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_formlabel,
-            --linebreak--,
-                margin_top_ce,
-                --linebreak--,
-                headline,double_headline_ce,
-        ';
-
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $inlineElements);
         // add the type definition & configuration
-        $table['types']['inlineElements'] = [
+        $table['types']['sliderElements'] = [
             'showitem' => '
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
                     --palette--;;general,
@@ -82,7 +56,7 @@ call_user_func(
                                 'image' => [
                                     'config' => [
                                         'maxitems' => 1,
-                                    ],
+                                    ]
                                 ]
                             ]
                         ]
@@ -105,5 +79,6 @@ call_user_func(
                 'group' => 'default'
             ],
         );
+
     }
 );

@@ -78,7 +78,7 @@ renderables:
           -
             defaultValue: ''
             type: Text
-            identifier: lastname-contact-form
+            identifier: lastname
             label: Nachname
             properties:
               fluidAdditionalAttributes:

@@ -18225,7 +18225,7 @@ nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-sub-item.active a
   height: 16px;
   -o-object-fit: cover;
   object-fit: cover;
-  margin-right: 8px;
+  margin-right: 20px;
   border: 1px solid #ddd;
   flex-shrink: 0;
 }
@@ -18244,8 +18244,8 @@ nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-sub-item.active a
   /* -------------------- 2. DROPDOWN-KOPF (Derzeit aktive Sprache) -------------------- */
   .language-toggle button {
     display: flex;
+    position: relative;
     align-items: center;
-    justify-content: space-between;
     padding: 8px 12px;
     background-color: #fff;
     /* ❌ Rahmen und Schatten hier entfernen, wenn Menü geöffnet ist */
@@ -18273,8 +18273,9 @@ nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-sub-item.active a
     display: inline-block;
     width: 0;
     height: 0;
-    margin-left: 10px;
     vertical-align: middle;
+    position: absolute;
+    right: 10px;
     border-bottom: 0;
     border-top: 4px solid #555;
     border-right: 4px solid transparent;
@@ -18370,9 +18371,10 @@ footer .menu-footer__list {
 }
 footer .menu-footer__list-item {
   display: block;
+  margin-bottom: 5px;
 }
 footer .menu-footer__list-item-link {
-  color: #fff;
+  color: #78b1f6;
   text-decoration: none;
 }
 footer .menu-footer__list-item-link:hover {
@@ -18439,8 +18441,8 @@ footer #copyright p {
   margin-right: 20px;
 }
 .contactform input, .loginform input {
-  border-color: transparent;
-  background: #1C1C1C;
+  border-color: #065B99;
+  background: #fff;
 }
 .contactform .input .form-control, .loginform .input .form-control {
   border-radius: 0;
@@ -18451,7 +18453,6 @@ footer #copyright p {
 }
 .contactform .input .form-control:focus, .loginform .input .form-control:focus {
   border-color: #065B99;
-  box-shadow: unset;
   outline: 0;
 }
 .contactform .input .form-check .declaration .form-check-input, .loginform .input .form-check .declaration .form-check-input {
@@ -18465,7 +18466,8 @@ footer #copyright p {
   border-radius: 0.15em;
 }
 .contactform .input textarea.form-control, .loginform .input textarea.form-control {
-  background: #1C1C1C;
+  border-color: #065B99;
+  background: #fff;
 }
 .contactform .input.checkbox label, .loginform .input.checkbox label {
   padding-left: 0;

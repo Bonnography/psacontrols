@@ -40,9 +40,10 @@ footer {
 
       &-item {
         display: block;
+        margin-bottom: 5px;
 
         &-link {
-          color: #fff;
+          color: $main-light-color;
           text-decoration: none;
 
           &:hover {

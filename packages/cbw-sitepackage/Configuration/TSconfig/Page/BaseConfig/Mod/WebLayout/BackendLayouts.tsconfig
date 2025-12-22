@@ -7,7 +7,7 @@ mod {
                 config {
                     backend_layout {
                         colCount = 1
-                        rowCount = 3
+                        rowCount = 2
                         rows {
                             1 {
                                 columns {
@@ -25,25 +25,10 @@ mod {
                                     }
                                 }
                             }
-                            3 {
-                                columns {
-                                    1 {
-                                        name = Inline Elemente
-                                        colPos = 999
-                                    }
-                                }
-                            }
                         }
                     }
                 }
             }
-
-
-
-
-
-
-
         }
     }
 }

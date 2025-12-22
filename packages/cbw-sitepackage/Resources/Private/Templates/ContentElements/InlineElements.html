@@ -92,13 +92,13 @@
                             </f:then>
                             <f:else>
                                 <f:switch expression="{data.inline_layout}">
-                                    <f:case value="0">
+                                    <f:case value="1">
                                         <f:render section="image-rendering-2cols" arguments="{_all}"/>
                                     </f:case>
-                                    <f:case value="1">
+                                    <f:case value="2">
                                         <f:render section="image-rendering-3cols" arguments="{_all}"/>
                                     </f:case>
-                                    <f:case value="2">
+                                    <f:case value="3">
                                         <f:render section="image-rendering-4cols" arguments="{_all}"/>
                                     </f:case>
                                 </f:switch>
@@ -114,7 +114,7 @@
                 <p class="subhead">{inlineElement.data.subheader}</p>
             </f:if>
             <f:if condition="{inlineElement.data.bodytext}">
-                    <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{inlineElement.data.bodytext}</f:format.html>
+                <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{inlineElement.data.bodytext}</f:format.html>
             </f:if>
             <f:if condition="{inlineElement.data.cta} && {inlineElement.data.cta_text}">
                 <f:link.typolink parameter="{inlineElement.data.cta}" class="btn btn-{f:if(condition: '{inlineElement.data.button_style} == 1', then: 'secondary', else: 'primary')}">
@@ -137,7 +137,6 @@
                     {inlineElement.data.cta_text}
                 </f:link.typolink>
             </f:if>
-
             <f:if condition="{inlineElement.images}">
                 <f:then>
                     <f:switch expression="{data.inline_layout}">

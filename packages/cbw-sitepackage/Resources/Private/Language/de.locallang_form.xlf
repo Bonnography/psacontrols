@@ -27,6 +27,9 @@
            <trans-unit id="element.email-contact-form.properties.label">
                <target>E-Mail-Adresse</target>
            </trans-unit>
+           <trans-unit id="element.message-contact-form.properties.placeholder">
+               <target>Nachricht*</target>
+           </trans-unit>
            <trans-unit id="element.message-contact-form.properties.label">
                <target>Nachricht</target>
            </trans-unit>

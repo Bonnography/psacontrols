@@ -1,7 +1,10 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
 <div id="{form.identifier}" class="mb-5">
+    <f:if condition="{form.label} == 'contactform'">
         <h3><f:translate key="LLL:EXT:cbw_sitepackage/Resources/Private/Language/locallang_form.xlf:form.confirmation.contactForm.header"/></h3>
         <p><f:translate key="LLL:EXT:cbw_sitepackage/Resources/Private/Language/locallang_form.xlf:form.confirmation.contactForm.data"/></p>
+    </f:if>
+
     <p>
         <f:if condition="{form.formState.formValues.firstname}">Name: {form.formState.formValues.firstname} <f:if condition="{form.formState.formValues.lastname}">{form.formState.formValues.lastname}</f:if><f:if condition="{form.formState.formValues.lastname-contact-form}">{form.formState.formValues.lastname-contact-form}</f:if></f:if>
         <f:if condition="{form.formState.formValues.phone}"><br>Tel.: {form.formState.formValues.phone}</f:if>

@@ -40,8 +40,8 @@
     }
   }
   input {
-    border-color: transparent;
-    background: $second-theme-color;
+    border-color: $main-theme-color;
+    background: #fff;
   }
 
   .input {
@@ -53,7 +53,6 @@
 
       &:focus {
         border-color: $main-theme-color;
-        box-shadow: unset;
         outline: 0;
       }
     }
@@ -74,7 +73,8 @@
     }
 
     textarea.form-control {
-      background: $second-theme-color;
+      border-color: $main-theme-color;
+      background: #fff;
     }
 
     &.checkbox {

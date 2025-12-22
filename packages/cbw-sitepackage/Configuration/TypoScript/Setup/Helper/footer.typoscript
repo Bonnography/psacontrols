@@ -21,8 +21,6 @@ lib.section-footer {
         }
         variables {
             menu-footer < lib.menu-footer
-            menu-social < lib.menu-social-media
-            menu-language < lib.menu-language
             copyright = TEXT
             copyright {
                 data = date : U

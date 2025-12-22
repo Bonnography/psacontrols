@@ -7,7 +7,7 @@ page {
 
     includeJS {
         5 = TEXT
-        5.stdWrap.value(
+        5.stdWrap.value (
          var pageId = {field:uid};
         )
     }
@@ -15,10 +15,6 @@ page {
     includeJSFooter {
         default = EXT:cbw_sitepackage/Resources/Public/js/default-libs.min.js
         cbwsitepackage = EXT:cbw_sitepackage/Resources/Public/js/cbw_sitepackage.min.js
-        recaptcha = https://www.google.com/recaptcha/api.js?hl=de
-        recaptcha.external = 1
-        recaptcha.defer = 1
-        recaptcha.async = 1
     }
 
 
@@ -33,6 +29,18 @@ page {
 
     40 < lib.section-footer
 }
+
+[page["uid"] == 8]
+    page {
+
+        includeJSFooter {
+            recaptcha = https://www.google.com/recaptcha/api.js?hl=de
+            recaptcha.external = 1
+            recaptcha.defer = 1
+            recaptcha.async = 1
+        }
+    }
+[end]
 
 [page["uid"] == 1]
     page.bodyTagAdd = id="home"

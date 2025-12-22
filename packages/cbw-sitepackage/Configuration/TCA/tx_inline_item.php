@@ -89,7 +89,7 @@ return [
           'showitem' => '
           image,image_position,
           --linebreak--,
-          cta, cta_text,remove_cta_button,'
+          cta, cta_text,'
         ],
     ],
     'columns' => [

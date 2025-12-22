@@ -33,6 +33,9 @@
             <trans-unit id="tx_inline_item.hidden">
                 <source>Child Element Hidden</source>
             </trans-unit>
+            <trans-unit id="tx_inline_item.remove_cta_button">
+                <source>Remove CTA Button and link all</source>
+            </trans-unit>
             <trans-unit id="tt_content.inlineElements.title">
                 <source>Inline Elements</source>
             </trans-unit>

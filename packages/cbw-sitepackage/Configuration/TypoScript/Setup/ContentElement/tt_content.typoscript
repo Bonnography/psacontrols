@@ -226,4 +226,12 @@ tt_content {
             }
         }
     }
+    form_formframework {
+        layoutRootPaths {
+            10 = EXT:cbw_sitepackage/Resources/Private/Layouts/ContentElements/
+        }
+        partialRootPaths {
+            10 = EXT:cbw_sitepackage/Resources/Private/Partials/ContentElements/
+        }
+    }
 }

@@ -9,7 +9,7 @@ lib.page-head-logo {
     file = EXT:cbw_sitepackage/Resources/Public/images/logo.png
     params = class="img-fluid"
     altText.data = leveltitle:0
-    titleText = Logo
+    titleText = Page Logo
     stdWrap {
         wrap = <div id="page-logo">|</div>
         typolink {
