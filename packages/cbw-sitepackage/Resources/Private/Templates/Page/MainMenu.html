@@ -2,31 +2,46 @@
 <f:layout name="Default" />
 <f:section name="Main">
     <f:if condition="{mainnavigation}">
-        <nav id="menu-main" role="navigation">
-            <ul class="menu-main__list">
-                <f:for each="{mainnavigation}" as="listitem">
-                    <li class="menu-main_item lvl1{f:if(condition: '{listitem.active} || {listitem.data.shortcut} == {data.uid}', then: ' active')}{f:if(condition: listitem.children, then: ' w-submenu')}">
-                        <f:link.typolink class="menu-main_item__link lvl1" parameter="{listitem.link}">
-                            {listitem.title}
-                        </f:link.typolink>
+            <nav id="menu-main" role="navigation">
+                <ul class="menu-main__list">
+                    <f:for each="{mainnavigation}" as="listitem">
+                        <li class="menu-main_item lvl1{f:if(condition: '{listitem.active} || {listitem.data.shortcut} == {data.uid}', then: ' active')}{f:if(condition: listitem.children, then: ' w-submenu')}">
+                            <f:link.typolink class="menu-main_item__link lvl1" parameter="{listitem.link}">
+                                {listitem.title}
+                            </f:link.typolink>
 
-                        <f:if condition="{listitem.children}">
+                            <f:if condition="{listitem.children}">
                                 <span class="w-submenu__opener lvl1 text-center {f:if(condition: listitem.active, then: 'open')}"></span>
-                            <ul class="menu-main__sub lvl2">
-                                <f:for each="{listitem.children}" as="lvl2Item">
-                                    <li class="menu-main__sub-item lvl2 {f:if(condition: lvl2Item.active, then: 'active')} {f:if(condition: '({lvl2Item.data.doktype} == 4 && {lvl2Item.data.shortcut} == {data.uid})', then: 'active')}">
-                                        <a href="{lvl2Item.link}" class="menu-main__sub-item_link lvl2" title="{lvl2Item.data.title} - Link">{lvl2Item.data.title}</a>
+                                <ul class="menu-main__sub lvl2">
+                                    <f:for each="{listitem.children}" as="lvl2Item">
+                                        <li class="menu-main__sub-item lvl2 {f:if(condition: lvl2Item.active, then: 'active')} {f:if(condition: '({lvl2Item.data.doktype} == 4 && {lvl2Item.data.shortcut} == {data.uid})', then: 'active')}">
+                                            <a href="{lvl2Item.link}" class="menu-main__sub-item_link lvl2" title="{lvl2Item.data.title} - Link">{lvl2Item.data.title}</a>
+                                        </li>
+                                    </f:for>
+                                </ul>
+                            </f:if>
+                        </li>
+
+                    </f:for>
+                    <f:if condition="{languageMenu.1.available}">
+                        <li class="menu-main_item language-section">
+                            <hr class="menu-divider" />
+                            <ul class="language-list-mobile">
+                                <f:for each="{languageMenu}" as="languages">
+                                    <li class="language-item {f:if(condition: languages.active, then: 'active')}">
+                                        <f:link.typolink parameter="{languages.link}" class="language-link">
+                                            <img src="{normalizedParams.siteUrl}{f:uri.resource(path: 'EXT:cbw_sitepackage/Resources/Public/images/icons/{languages.twoLetterIsoCode}.svg')}"
+                                                 alt="{languages.title}" class="flag-icon">
+                                            <f:translate key="LLL:EXT:cbw_sitepackage/Resources/Private/Language/locallang.xlf:languages.{languages.twoLetterIsoCode}"/>
+                                        </f:link.typolink>
                                     </li>
                                 </f:for>
                             </ul>
-                        </f:if>
-                    </li>
+                        </li>
+                    </f:if>
+                </ul>
 
-                </f:for>
-
-            </ul>
-
-        </nav>
+            </nav>
 
             <f:if condition="{languageMenu.1.available}">
                 <nav class="language-menu">
@@ -70,9 +85,6 @@
                     </div>
                 </nav>
             </f:if>
-
-
-
     </f:if>
 
 </f:section>

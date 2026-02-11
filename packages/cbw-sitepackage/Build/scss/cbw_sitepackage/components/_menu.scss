@@ -24,6 +24,7 @@ nav#menu-main {
     position: relative;
     text-align: center;
     width: 100%;
+    padding-top: 35px;
 
     .menu-main_item {
       list-style-type: none;
@@ -178,8 +179,68 @@ nav#menu-main {
     top: 60px;
   }
 }
+.language-section {
+  hr {
+    margin: 35px 0;
+  }
+}
+.language-list-mobile {
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center; // Zentriert die Sprachen nebeneinander
+  list-style: none;
+
+  .language-item {
+    position: relative;
+    // Die Trennlinie
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      height: 80%;
+      width: 1px;
+      background: #fff;
+      top: 10%;
+    }
+  }
+  .language-link {
+    display: flex;
+    flex-direction: column; // Flagge über dem Text
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.875em;
+    opacity: 1;
+    margin-right: 20px;
+    margin-left: 20px;
+
+
+
+    .flag-icon {
+      width: 35px;
+      height: 35px;
+      margin-bottom: 5px;
+      border-radius: 2px;
+    }
+  }
+
+
+
+  .active .language-link {
+    opacity: .5;
+  }
+
+  &:first-child {
+    .language-link {
+      margin-left: 0;
+    }
+  }
+}
 
 @media screen and (min-width: 1200px) {
+
   nav#menu-main {
     position: relative;
     padding: 0;
@@ -201,6 +262,7 @@ nav#menu-main {
       position: relative;
       display: flex;
       justify-content: flex-end;
+      padding-top: 0;
 
       li.menu-main_item {
         display: inline-flex;
@@ -339,6 +401,12 @@ nav#menu-main {
 
           &.open {
             transform: rotate(0);
+          }
+        }
+        &.language-section {
+          display: none;
+          .language-list-mobile {
+            display: none;
           }
         }
       }
