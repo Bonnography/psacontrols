@@ -17839,7 +17839,7 @@ iframe.wait-autoplay {
 }
 .header .page-logo img {
   position: relative;
-  height: 50px;
+  height: 75px;
   transition: all 0.4s;
   width: 100%;
   left: 0;
@@ -17855,7 +17855,7 @@ iframe.wait-autoplay {
   transition: height 0.2s ease-in-out;
 }
 .header-small .page-logo img {
-  height: 40px;
+  height: 60px;
   transition: height 0.4s;
 }
 
