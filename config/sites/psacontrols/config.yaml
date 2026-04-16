@@ -7,6 +7,11 @@ baseVariants:
     base: 'https://psacontrols.ddev.site'
     condition: 'applicationContext == "Development/Ddev"'
 disableStaticFileCache: false
+errorHandling:
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=21'
 languages:
   -
     title: Deutsch
@@ -31,4 +36,16 @@ languages:
     flag: en-us-gb
     languageId: 1
 rootPageId: 1
+routeEnhancers:
+  PageTypeSuffix:
+    type: PageType
+    default: /
+    index: ''
+    map:
+      sitemap.xml: 1533906435
+routes:
+  -
+    route: robots.txt
+    type: staticText
+    content: "# Robots.txt für TYPO3 v13 (Composer Based)\r\n# Erstellt von deinem SEO-Experten\r\n\r\nUser-agent: *\r\nDisallow: /typo3/          # Internes Backend ausschließen\r\nDisallow: /typo3conf/      # Konfigurationsdateien (meist Read-only, aber sicher ist sicher)\r\nDisallow: /*?id=* # Verhindert Duplicate Content durch alte URL-Strukturen\r\nDisallow: /*&id=* # Verhindert Duplicate Content\r\nDisallow: /*?L=* # Verhindert Probleme mit Sprachparametern (falls Routing aktiv)\r\nDisallow: /*&L=* # Verhindert Probleme mit Sprachparametern\r\nDisallow: /*?type=* # Verhindert Indexierung von Sonder-Seitentypen (z.B. Druckansicht)\r\nDisallow: /*&type=*\r\n\r\n# Erlaube den Zugriff auf Assets (Wichtig für das Rendering!)\r\nAllow: /_assets/           # TYPO3 v13 Composer Assets (Symlinks)\r\nAllow: /fileadmin/         # Bilder und PDFs sollen indexiert werden\r\n\r\n# Sitemap-Pfad (Anpassen an deine Domain!)\r\nSitemap: https://www.deine-domain.de/sitemap.xml"
 websiteTitle: ''
