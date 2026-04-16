@@ -17970,6 +17970,9 @@ nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-sub {
 nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-sub-item.active a {
   color: #065B99;
 }
+nav#menu-main .menu-main__list-footermenu {
+  padding-top: 0;
+}
 
 /*
  * Menu Trigger
@@ -18216,6 +18219,9 @@ nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-sub-item.active a
   .header-small #menu-main {
     top: 0;
   }
+  nav#menu-main ul.menu-main__list li.menu-main_item.footer-section-mobile {
+    display: none;
+  }
 }
 .mobile-meta-menu {
   margin-top: 20px;
@@ -18328,7 +18334,7 @@ nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-sub-item.active a
     height: 0;
     vertical-align: middle;
     position: absolute;
-    right: 10px;
+    right: 35px;
     border-bottom: 0;
     border-top: 4px solid #555;
     border-right: 4px solid transparent;

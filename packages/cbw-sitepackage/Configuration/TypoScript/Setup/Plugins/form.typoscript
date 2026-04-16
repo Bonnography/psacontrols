@@ -3,6 +3,21 @@ plugin.tx_form {
         yamlConfigurations {
             100 = EXT:cbw_sitepackage/Configuration/Form/CustomBaseSetup.yaml
         }
+        formDefinitionOverrides {
+            contactform {
+                renderables {
+                    0 {
+                        renderables {
+                            3 {
+                                properties {
+                                    privacyPage = {$plugin.tx_cbw_sitepackage.page.privacyPage}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 module.tx_form {

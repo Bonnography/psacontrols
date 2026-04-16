@@ -39,6 +39,13 @@ lib.menu-main-fluid {
             includeNotInMenu = 1
             as = metaMenu
         }
+        40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        40 {
+            special = directory
+            special.value = {$plugin.tx_cbw_sitepackage.page.menuFooter}
+            includeNotInMenu = 1
+            as = footernavigation
+        }
     }
 }
 

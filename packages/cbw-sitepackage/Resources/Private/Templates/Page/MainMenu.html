@@ -23,18 +23,34 @@
                         </li>
 
                     </f:for>
+                    <f:if condition="{footernavigation}">
+                        <li class="menu-main_item footer-section-mobile">
+                            <ul class="menu-main__list menu-main__list-footermenu">
+                                <f:for each="{footernavigation}" as="footeritem">
+                                    <li class="menu-main_item menu-main_item-footermenu lvl1">
+                                        <f:link.typolink parameter="{footeritem.link}" class="menu-main_item__link menu-main_item__link-menufooter lvl1">
+                                            {footeritem.title}
+                                        </f:link.typolink>
+                                    </li>
+                                </f:for>
+                            </ul>
+                        </li>
+                    </f:if>
+
                     <f:if condition="{languageMenu.1.available}">
                         <li class="menu-main_item language-section">
                             <hr class="menu-divider" />
                             <ul class="language-list-mobile">
                                 <f:for each="{languageMenu}" as="languages">
-                                    <li class="language-item {f:if(condition: languages.active, then: 'active')}">
-                                        <f:link.typolink parameter="{languages.link}" class="language-link">
-                                            <img src="{normalizedParams.siteUrl}{f:uri.resource(path: 'EXT:cbw_sitepackage/Resources/Public/images/icons/{languages.twoLetterIsoCode}.svg')}"
-                                                 alt="{languages.title}" class="flag-icon">
-                                            <f:translate key="LLL:EXT:cbw_sitepackage/Resources/Private/Language/locallang.xlf:languages.{languages.twoLetterIsoCode}"/>
-                                        </f:link.typolink>
-                                    </li>
+                                    <f:if condition="{languages.available}">
+                                        <li class="language-item {f:if(condition: languages.active, then: 'active')}">
+                                            <f:link.typolink parameter="{languages.link}" class="language-link">
+                                                <img src="{normalizedParams.siteUrl}{f:uri.resource(path: 'EXT:cbw_sitepackage/Resources/Public/images/icons/{languages.twoLetterIsoCode}.svg')}"
+                                                     alt="{languages.title}" class="flag-icon">
+                                                <f:translate key="LLL:EXT:cbw_sitepackage/Resources/Private/Language/locallang.xlf:languages.{languages.twoLetterIsoCode}"/>
+                                            </f:link.typolink>
+                                        </li>
+                                    </f:if>
                                 </f:for>
                             </ul>
                         </li>

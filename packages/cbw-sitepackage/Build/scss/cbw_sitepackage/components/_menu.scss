@@ -121,6 +121,9 @@ nav#menu-main {
         }
       }
     }
+    &-footermenu {
+      padding-top: 0;
+    }
   }
 }
 
@@ -417,5 +420,7 @@ nav#menu-main {
       top: 0;
     }
   }
-
+  nav#menu-main ul.menu-main__list li.menu-main_item.footer-section-mobile {
+    display: none;
+  }
 }

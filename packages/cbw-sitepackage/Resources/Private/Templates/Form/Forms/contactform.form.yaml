@@ -11,9 +11,9 @@ finishers:
     options:
       subject: 'Nachricht vom Kontaktformular'
       recipients:
-        benjamin.bomberg@codebomb-websolutions.de: 'CBW'
+        benjamin.bomberg@codebomb-websolutions.de: 'PSAControls'
       senderAddress: 'info@codebomb-websolutions.de'
-      senderName: 'CBW'
+      senderName: 'PSAControls'
       replyTo: '{email-contact-form}'
       addHtmlPart: true
       attachUploads: true
@@ -26,11 +26,11 @@ finishers:
     identifier: EmailToReceiver
   -
     options:
-      subject: 'Ihre Anfrage an CBW'
+      subject: 'Ihre Anfrage an PSAControls'
       recipients:
-        '{email-contact-form}': '{firstname} {lastname-contact-form}'
+        '{email-contact-form}': '{firstname} {lastname}'
       senderAddress: info@codebomb-websolutions.de
-      senderName: 'CBW'
+      senderName: 'PSAControls'
       addHtmlPart: true
       attachUploads: true
       title: ''

@@ -31,5 +31,7 @@ plugin.tx_cbw_sitepackage {
         newsListViewPid = 2
         # cat=basic/Page/30; type=int+; label=Meta Menu
         metaMenu = 14
+        # cat=basic/Page/40; type=int+; label=Datenschutz Seite
+        privacyPage = 13
     }
 }

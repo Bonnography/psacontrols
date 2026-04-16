@@ -12,7 +12,16 @@
 					additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
 				/>
 				<span class="checkmarker"></span>
-				<f:format.html>{formvh:translateElementProperty(element: element, property: 'label')}</f:format.html><f:if condition="{element.required}"><f:render partial="Field/Required" /></f:if>
+				<f:if condition="{element.identifier} == 'consent-declaration'">
+					<f:then>
+						<f:format.html><f:translate key="LLL:EXT:cbw_sitepackage/Resources/Private/Language/locallang_form.xlf:element.consent-declaration.properties.label" arguments="{0: '{f:uri.page(pageUid: element.properties.privacyPage)}'}" /></f:format.html>
+						<f:if condition="{element.required}"><f:render partial="Field/Required" /></f:if>
+					</f:then>
+					<f:else>
+						<f:format.raw>{formvh:translateElementProperty(element: element, property: 'label')}</f:format.raw><f:if condition="{element.required}"><f:render partial="Field/Required" /></f:if>
+					</f:else>
+				</f:if>
+
 			</label>
 		</div>
 	</f:render>
