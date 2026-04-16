@@ -27,11 +27,13 @@
                         <li class="menu-main_item footer-section-mobile">
                             <ul class="menu-main__list menu-main__list-footermenu">
                                 <f:for each="{footernavigation}" as="footeritem">
-                                    <li class="menu-main_item menu-main_item-footermenu lvl1">
-                                        <f:link.typolink parameter="{footeritem.link}" class="menu-main_item__link menu-main_item__link-menufooter lvl1">
-                                            {footeritem.title}
-                                        </f:link.typolink>
-                                    </li>
+                                    <f:if condition="{footeritem.data.shortcut} !== 4">
+                                        <li class="menu-main_item menu-main_item-footermenu lvl1{f:if(condition: footeritem.active, then: ' active')}">
+                                            <f:link.typolink parameter="{footeritem.link}" class="menu-main_item__link menu-main_item__link-menufooter lvl1">
+                                                {footeritem.title}
+                                            </f:link.typolink>
+                                        </li>
+                                    </f:if>
                                 </f:for>
                             </ul>
                         </li>

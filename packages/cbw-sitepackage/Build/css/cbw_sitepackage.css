@@ -17915,9 +17915,11 @@ nav#menu-main .menu-main__list .menu-main_item__link {
   color: #fff;
   text-decoration: none;
   font-size: 1.25em;
+  border: 1px solid transparent;
 }
 nav#menu-main .menu-main__list .menu-main_item.active .menu-main_item__link {
-  color: #065B99;
+  color: #fff;
+  border: 1px solid #fff;
 }
 nav#menu-main .menu-main__list .menu-main_item .w-submenu__opener {
   position: absolute;
@@ -17955,7 +17957,7 @@ nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-item a {
   text-decoration: none;
 }
 nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-item.active a.lvl2 {
-  color: #065B99;
+  color: #fff;
 }
 nav#menu-main .menu-main__list .menu-main_item .menu-main__sub.open {
   transition: max-height 2s ease-out;
@@ -17968,7 +17970,8 @@ nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-sub {
   list-style: none;
 }
 nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-sub-item.active a {
-  color: #065B99;
+  color: #fff;
+  border: 1px solid #fff;
 }
 nav#menu-main .menu-main__list-footermenu {
   padding-top: 0;
